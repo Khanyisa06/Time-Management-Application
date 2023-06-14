@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Time_Management.Models.Modules>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modules Details</h1>
+
+<p>
+    <a asp-action="Create">Add New Module</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Module_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module_Credits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weekly_Class_Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester_Weeks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester_Start_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Module_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Module_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Module_Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weekly_Class_Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester_Weeks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester_Start_Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

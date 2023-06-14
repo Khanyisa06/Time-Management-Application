@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Time_Management.props" />
+</Project>
